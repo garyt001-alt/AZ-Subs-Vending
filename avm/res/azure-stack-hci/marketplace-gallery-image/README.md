@@ -16,7 +16,7 @@ This module deploys an Azure Stack HCI Marketplace Gallery Image.
 | Resource Type | API Version |
 | :-- | :-- |
 | `Microsoft.Authorization/roleAssignments` | [2022-04-01](https://learn.microsoft.com/en-us/azure/templates/Microsoft.Authorization/2022-04-01/roleAssignments) |
-| `Microsoft.AzureStackHCI/marketplaceGalleryImages` | [2025-02-01-preview](https://learn.microsoft.com/en-us/azure/templates/Microsoft.AzureStackHCI/2025-02-01-preview/marketplaceGalleryImages) |
+| `Microsoft.AzureStackHCI/marketplaceGalleryImages` | [2024-10-01-preview](https://learn.microsoft.com/en-us/azure/templates/Microsoft.AzureStackHCI/2024-10-01-preview/marketplaceGalleryImages) |
 
 ## Usage examples
 
@@ -54,12 +54,7 @@ module marketplaceGalleryImage 'br/public:avm/res/azure-stack-hci/marketplace-ga
       }
       osType: 'Windows'
       version: {
-        name: '20348.2113.231109'
-        properties: {
-          storageProfile: {
-            osDiskImage: {}
-          }
-        }
+        name: '20348.2461.240510'
       }
     }
     name: 'ashgimin1'
@@ -94,12 +89,7 @@ module marketplaceGalleryImage 'br/public:avm/res/azure-stack-hci/marketplace-ga
         },
         "osType": "Windows",
         "version": {
-          "name": "20348.2113.231109",
-          "properties": {
-            "storageProfile": {
-              "osDiskImage": {}
-            }
-          }
+          "name": "20348.2461.240510"
         }
       }
     },
@@ -132,12 +122,7 @@ param marketplaceGalleryImageProperties = {
   }
   osType: 'Windows'
   version: {
-    name: '20348.2113.231109'
-    properties: {
-      storageProfile: {
-        osDiskImage: {}
-      }
-    }
+    name: '20348.2461.240510'
   }
 }
 param name = 'ashgimin1'
@@ -171,7 +156,7 @@ module marketplaceGalleryImage 'br/public:avm/res/azure-stack-hci/marketplace-ga
       }
       osType: 'Windows'
       version: {
-        name: '20348.2113.231109'
+        name: '20348.2461.240510'
         properties: {
           storageProfile: {
             osDiskImage: {}
@@ -218,7 +203,7 @@ module marketplaceGalleryImage 'br/public:avm/res/azure-stack-hci/marketplace-ga
         },
         "osType": "Windows",
         "version": {
-          "name": "20348.2113.231109",
+          "name": "20348.2461.240510",
           "properties": {
             "storageProfile": {
               "osDiskImage": {}
@@ -267,7 +252,7 @@ param marketplaceGalleryImageProperties = {
   }
   osType: 'Windows'
   version: {
-    name: '20348.2113.231109'
+    name: '20348.2461.240510'
     properties: {
       storageProfile: {
         osDiskImage: {}
@@ -413,6 +398,11 @@ The version of the gallery image.
 | Parameter | Type | Description |
 | :-- | :-- | :-- |
 | [`name`](#parameter-marketplacegalleryimagepropertiesversionname) | string | This is the version of the gallery image. |
+
+**Optional parameters**
+
+| Parameter | Type | Description |
+| :-- | :-- | :-- |
 | [`properties`](#parameter-marketplacegalleryimagepropertiesversionproperties) | object | Describes the properties of a gallery image version. |
 
 ### Parameter: `marketplaceGalleryImageProperties.version.name`
@@ -426,7 +416,7 @@ This is the version of the gallery image.
 
 Describes the properties of a gallery image version.
 
-- Required: Yes
+- Required: No
 - Type: object
 
 **Required parameters**

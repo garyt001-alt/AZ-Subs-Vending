@@ -5,8 +5,8 @@
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.33.93.31351",
-      "templateHash": "11196698611194758121"
+      "version": "0.32.4.45862",
+      "templateHash": "16330314418554345227"
     },
     "name": "Azure Stack HCI Marketplace Gallery Image",
     "description": "This module deploys an Azure Stack HCI Marketplace Gallery Image."
@@ -49,8 +49,9 @@
         },
         "properties": {
           "$ref": "#/definitions/galleryImageVersionPropertiesType",
+          "nullable": true,
           "metadata": {
-            "description": "Required. Describes the properties of a gallery image version."
+            "description": "Optional. Describes the properties of a gallery image version."
           }
         }
       }
@@ -302,7 +303,7 @@
     },
     "marketplaceGalleryImages": {
       "type": "Microsoft.AzureStackHCI/marketplaceGalleryImages",
-      "apiVersion": "2025-02-01-preview",
+      "apiVersion": "2024-10-01-preview",
       "name": "[parameters('name')]",
       "extendedLocation": {
         "name": "[parameters('customLocationResourceId')]",
@@ -362,7 +363,7 @@
       "metadata": {
         "description": "The location of the virtual hard disk."
       },
-      "value": "[reference('marketplaceGalleryImages', '2025-02-01-preview', 'full').location]"
+      "value": "[reference('marketplaceGalleryImages', '2024-10-01-preview', 'full').location]"
     }
   }
 }

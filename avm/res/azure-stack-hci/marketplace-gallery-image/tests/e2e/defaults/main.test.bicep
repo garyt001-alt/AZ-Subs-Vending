@@ -205,12 +205,7 @@ module testDeployment '../../../main.bicep' = {
       }
       osType: 'Windows'
       version: {
-        name: '20348.2113.231109'
-        properties: {
-          storageProfile: {
-            osDiskImage: {}
-          }
-        }
+        name: '20348.2461.240510'
       }
     }
   }

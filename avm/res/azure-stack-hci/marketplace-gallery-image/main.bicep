@@ -72,7 +72,7 @@ resource avmTelemetry 'Microsoft.Resources/deployments@2024-03-01' = if (enableT
   }
 }
 
-resource marketplaceGalleryImages 'Microsoft.AzureStackHCI/marketplaceGalleryImages@2025-02-01-preview' = {
+resource marketplaceGalleryImages 'Microsoft.AzureStackHCI/marketplaceGalleryImages@2024-10-01-preview' = {
   extendedLocation: {
     name: customLocationResourceId
     type: 'CustomLocation'
@@ -141,8 +141,8 @@ type galleryImageVersionType = {
   @description('Required. This is the version of the gallery image.')
   name: string
 
-  @description('Required. Describes the properties of a gallery image version.')
-  properties: galleryImageVersionPropertiesType
+  @description('Optional. Describes the properties of a gallery image version.')
+  properties: galleryImageVersionPropertiesType?
 }
 
 type galleryImageIdentifierType = {
