@@ -55,7 +55,7 @@ var formattedRoleAssignments = [
 
 #disable-next-line no-deployments-resources
 resource avmTelemetry 'Microsoft.Resources/deployments@2024-03-01' = if (enableTelemetry) {
-  name: '46d3xbcp.res.azurestackhci-virtualharddisk.${replace('-..--..-', '.', '-')}.${substring(uniqueString(deployment().name, location), 0, 4)}'
+  name: '46d3xbcp.res.azurestackhci-markplgalleryimg.${replace('-..--..-', '.', '-')}.${substring(uniqueString(deployment().name, location), 0, 4)}'
   properties: {
     mode: 'Incremental'
     template: {
@@ -107,16 +107,16 @@ resource marketplaceGalleryImages_roleAssignments 'Microsoft.Authorization/roleA
 // Outputs      //
 // ============ //
 
-@description('The name of the virtual hard disk.')
+@description('The name of the marketplace gallery images.')
 output name string = marketplaceGalleryImages.name
 
-@description('The resource ID of the virtual hard disk.')
+@description('The resource ID of the marketplace gallery images.')
 output resourceId string = marketplaceGalleryImages.id
 
-@description('The resource group of the virtual hard disk.')
+@description('The resource group of the marketplace gallery images.')
 output resourceGroupName string = resourceGroup().name
 
-@description('The location of the virtual hard disk.')
+@description('The location of the marketplace gallery images.')
 output location string = marketplaceGalleryImages.location
 
 // =============== //

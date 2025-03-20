@@ -603,10 +603,10 @@ Tags of the resource.
 
 | Output | Type | Description |
 | :-- | :-- | :-- |
-| `location` | string | The location of the virtual hard disk. |
-| `name` | string | The name of the virtual hard disk. |
-| `resourceGroupName` | string | The resource group of the virtual hard disk. |
-| `resourceId` | string | The resource ID of the virtual hard disk. |
+| `location` | string | The location of the marketplace gallery images. |
+| `name` | string | The name of the marketplace gallery images. |
+| `resourceGroupName` | string | The resource group of the marketplace gallery images. |
+| `resourceId` | string | The resource ID of the marketplace gallery images. |
 
 ## Cross-referenced modules
 
