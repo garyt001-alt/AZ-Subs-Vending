@@ -191,7 +191,7 @@ resource customLocation 'Microsoft.ExtendedLocation/customLocations@2021-08-31-p
 
 module testDeployment '../../../main.bicep' = {
   scope: resourceGroup
-  name: '${uniqueString(deployment().name, enforcedLocation)}-test-${serviceShort}'
+  name: '${uniqueString(deployment().name, enforcedLocation)}-mgi-${serviceShort}'
   params: {
     name: '${namePrefix}${serviceShort}1'
     customLocationResourceId: customLocation.id
