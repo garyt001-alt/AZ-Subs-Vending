@@ -191,7 +191,7 @@ resource customLocation 'Microsoft.ExtendedLocation/customLocations@2021-08-31-p
 
 module testDeployment '../../../main.bicep' = {
   scope: resourceGroup
-  name: '${uniqueString(deployment().name, enforcedLocation)}-test-${serviceShort}'
+  name: '${uniqueString(deployment().name, enforcedLocation)}-mgi-${serviceShort}'
   params: {
     name: '${namePrefix}${serviceShort}1'
     customLocationResourceId: customLocation.id
@@ -205,12 +205,7 @@ module testDeployment '../../../main.bicep' = {
       }
       osType: 'Windows'
       version: {
-        name: '20348.2113.231109'
-        properties: {
-          storageProfile: {
-            osDiskImage: {}
-          }
-        }
+        name: '20348.2461.240510'
       }
     }
   }

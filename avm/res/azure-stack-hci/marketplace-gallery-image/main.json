@@ -5,8 +5,8 @@
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.33.93.31351",
-      "templateHash": "11196698611194758121"
+      "version": "0.32.4.45862",
+      "templateHash": "12682304902684331255"
     },
     "name": "Azure Stack HCI Marketplace Gallery Image",
     "description": "This module deploys an Azure Stack HCI Marketplace Gallery Image."
@@ -49,8 +49,9 @@
         },
         "properties": {
           "$ref": "#/definitions/galleryImageVersionPropertiesType",
+          "nullable": true,
           "metadata": {
-            "description": "Required. Describes the properties of a gallery image version."
+            "description": "Optional. Describes the properties of a gallery image version."
           }
         }
       }
@@ -284,7 +285,7 @@
       "condition": "[parameters('enableTelemetry')]",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2024-03-01",
-      "name": "[format('46d3xbcp.res.azurestackhci-virtualharddisk.{0}.{1}', replace('-..--..-', '.', '-'), substring(uniqueString(deployment().name, parameters('location')), 0, 4))]",
+      "name": "[format('46d3xbcp.res.azurestackhci-markplgalleryimg.{0}.{1}', replace('-..--..-', '.', '-'), substring(uniqueString(deployment().name, parameters('location')), 0, 4))]",
       "properties": {
         "mode": "Incremental",
         "template": {
@@ -302,7 +303,7 @@
     },
     "marketplaceGalleryImages": {
       "type": "Microsoft.AzureStackHCI/marketplaceGalleryImages",
-      "apiVersion": "2025-02-01-preview",
+      "apiVersion": "2024-10-01-preview",
       "name": "[parameters('name')]",
       "extendedLocation": {
         "name": "[parameters('customLocationResourceId')]",
@@ -339,30 +340,30 @@
     "name": {
       "type": "string",
       "metadata": {
-        "description": "The name of the virtual hard disk."
+        "description": "The name of the marketplace gallery images."
       },
       "value": "[parameters('name')]"
     },
     "resourceId": {
       "type": "string",
       "metadata": {
-        "description": "The resource ID of the virtual hard disk."
+        "description": "The resource ID of the marketplace gallery images."
       },
       "value": "[resourceId('Microsoft.AzureStackHCI/marketplaceGalleryImages', parameters('name'))]"
     },
     "resourceGroupName": {
       "type": "string",
       "metadata": {
-        "description": "The resource group of the virtual hard disk."
+        "description": "The resource group of the marketplace gallery images."
       },
       "value": "[resourceGroup().name]"
     },
     "location": {
       "type": "string",
       "metadata": {
-        "description": "The location of the virtual hard disk."
+        "description": "The location of the marketplace gallery images."
       },
-      "value": "[reference('marketplaceGalleryImages', '2025-02-01-preview', 'full').location]"
+      "value": "[reference('marketplaceGalleryImages', '2024-10-01-preview', 'full').location]"
     }
   }
 }
