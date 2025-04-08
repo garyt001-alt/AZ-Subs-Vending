@@ -26,6 +26,9 @@ param publicIPAddressObject object = {
   name: '${name}-pip'
 }
 
+@description('Optional. Specifies additional properties of the Azure Firewall. This is used to add additional properties to the Azure Firewall resource.')
+param additionalProperties object = {}
+
 @description('Optional. The Management Public IP resource ID to associate to the AzureFirewallManagementSubnet. If empty, then the Management Public IP that is created as part of this module will be applied to the AzureFirewallManagementSubnet.')
 param managementIPResourceID string = ''
 
@@ -285,6 +288,7 @@ resource azureFirewall 'Microsoft.Network/azureFirewalls@2024-05-01' = {
         applicationRuleCollections: applicationRuleCollections ?? []
         natRuleCollections: natRuleCollections ?? []
         networkRuleCollections: networkRuleCollections ?? []
+        additionalProperties: additionalProperties
       }
     : {
         firewallPolicy: !empty(firewallPolicyId)
@@ -296,6 +300,7 @@ resource azureFirewall 'Microsoft.Network/azureFirewalls@2024-05-01' = {
           name: azureSkuName
           tier: azureSkuTier
         }
+        additionalProperties: additionalProperties
         hubIPAddresses: !empty(hubIPAddresses) ? hubIPAddresses : null
         virtualHub: !empty(virtualHubId)
           ? {
